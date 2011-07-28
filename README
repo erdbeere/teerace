@@ -1,1 +1,34 @@
 Teerace is a project gathering results from a network of trusted Teeworlds Race-mod servers.
+
+************
+Installation
+************
+
+Setting up the virtualenv (optional)
+====================================
+
+First, you should create a virtual environment to seperate python packages
+from your system from python packages for teerace. This can be done by
+``virtualenv --no-site-packages /directory/for/virtualenv``
+After you have created it, activate it. This can be done with
+``. venv/bin/activate``
+You are now ready to install the required packages. Do that by executing
+``pip install -r requirements.txt``
+
+Create a proper settings file
+=============================
+
+Note to bnn: Maybe there should be a "development_settings.py.example" file
+which alread includes all DEBUG settings set to True?
+
+Setting up the database
+=======================
+
+Set the database up like you would setup every django project:
+``python manage.py syncdb``. The database will be a sqlite database named
+"teerace.sqlite". If you are asked to create a superuser account, SKIP! We will
+first need to do a database migration because we are using south:
+``python manage.py migrate``
+
+The database is now setup completly and you can create an admin account with
+``python manage.py createsuperuser``

@@ -87,7 +87,7 @@ class Map(models.Model):
 
 
 class MapType(models.Model):
-	slug = models.SlugField(max_length=20)
+	slug = models.SlugField(max_length=20, editable=False)
 	displayed_name = models.CharField(max_length=50)
 	description = models.TextField(blank=True)
 

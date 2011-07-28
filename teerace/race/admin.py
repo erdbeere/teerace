@@ -1,7 +1,7 @@
 from django.contrib import admin
 from race import tasks
 from race.forms import ServerAdminForm
-from race.models import Map, Run, Server
+from race.models import Map, Run, Server, MapType
 
 
 class MapAdmin(admin.ModelAdmin):
@@ -55,6 +55,10 @@ class ServerAdmin(admin.ModelAdmin):
 
 	actions = [suspend_server, reactivate_server]
 
+class MapTypeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'displayed_name', 'slug')
+    list_display_links = ('id', 'displayed_name')
 
 admin.site.register(Map, MapAdmin)
 admin.site.register(Server, ServerAdmin)
+admin.site.register(MapType, MapTypeAdmin)

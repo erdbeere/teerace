@@ -23,3 +23,4 @@ M2Crypto>=0.20.2
 Markdown>=2.0.3
 -e git+https://github.com/SushiTee/tml.git#egg=tml
 south>=0.7
+python-memcached>=1.47
